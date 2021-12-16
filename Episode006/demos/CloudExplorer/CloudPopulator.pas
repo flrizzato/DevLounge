@@ -350,6 +350,7 @@ begin
 
   FConnection.AccountName := AccountName;
   FConnection.AccountKey := AccountPass;
+  FConnection.Protocol := 'https';
 end;
 
 destructor TCloudConnection.Destroy;

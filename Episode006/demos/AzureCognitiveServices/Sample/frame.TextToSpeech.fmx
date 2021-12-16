@@ -146,8 +146,8 @@ object FrameTextToSpeech: TFrameTextToSpeech
     Size.Height = 229.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
-    Viewport.Width = 572.000000000000000000
-    Viewport.Height = 225.000000000000000000
+    Viewport.Width = 576.000000000000000000
+    Viewport.Height = 229.000000000000000000
   end
   object MediaPlayer1: TMediaPlayer
     Left = 64

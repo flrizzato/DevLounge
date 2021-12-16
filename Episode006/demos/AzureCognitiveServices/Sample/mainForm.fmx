@@ -317,7 +317,7 @@ object frmMain: TfrmMain
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           TextSettings.HorzAlign = Center
           Text = 'Azure Cognitive Services - Text Dictionary'
-          TabOrder = 14
+          TabOrder = 16
         end
         object Label8: TLabel
           Align = MostTop
