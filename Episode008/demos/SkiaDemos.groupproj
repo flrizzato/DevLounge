@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5E469C8A-C9E8-4963-B096-CDA3C4A7F7BD}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Skia4Delphi\Projects\RAD Studio 11 Alexandria\Skia4Delphi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Skia4Delphi_VCL\Projects\RAD Studio 11 Alexandria\Skia4Delphi_VCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SK4D_Demo\Projects\RAD Studio 11 Alexandria\SK4D_Demo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SkiaVCL101\VCL101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SkiaReport101\Report101.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Skia4Delphi">
+        <MSBuild Projects="Skia4Delphi\Projects\RAD Studio 11 Alexandria\Skia4Delphi.dproj"/>
+    </Target>
+    <Target Name="Skia4Delphi:Clean">
+        <MSBuild Projects="Skia4Delphi\Projects\RAD Studio 11 Alexandria\Skia4Delphi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia4Delphi:Make">
+        <MSBuild Projects="Skia4Delphi\Projects\RAD Studio 11 Alexandria\Skia4Delphi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skia4Delphi_VCL">
+        <MSBuild Projects="Skia4Delphi_VCL\Projects\RAD Studio 11 Alexandria\Skia4Delphi_VCL.dproj"/>
+    </Target>
+    <Target Name="Skia4Delphi_VCL:Clean">
+        <MSBuild Projects="Skia4Delphi_VCL\Projects\RAD Studio 11 Alexandria\Skia4Delphi_VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skia4Delphi_VCL:Make">
+        <MSBuild Projects="Skia4Delphi_VCL\Projects\RAD Studio 11 Alexandria\Skia4Delphi_VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SK4D_Demo">
+        <MSBuild Projects="SK4D_Demo\Projects\RAD Studio 11 Alexandria\SK4D_Demo.dproj"/>
+    </Target>
+    <Target Name="SK4D_Demo:Clean">
+        <MSBuild Projects="SK4D_Demo\Projects\RAD Studio 11 Alexandria\SK4D_Demo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SK4D_Demo:Make">
+        <MSBuild Projects="SK4D_Demo\Projects\RAD Studio 11 Alexandria\SK4D_Demo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCL101">
+        <MSBuild Projects="SkiaVCL101\VCL101.dproj"/>
+    </Target>
+    <Target Name="VCL101:Clean">
+        <MSBuild Projects="SkiaVCL101\VCL101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL101:Make">
+        <MSBuild Projects="SkiaVCL101\VCL101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Report101">
+        <MSBuild Projects="SkiaReport101\Report101.dproj"/>
+    </Target>
+    <Target Name="Report101:Clean">
+        <MSBuild Projects="SkiaReport101\Report101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Report101:Make">
+        <MSBuild Projects="SkiaReport101\Report101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Skia4Delphi;Skia4Delphi_VCL;SK4D_Demo;VCL101;Report101"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Skia4Delphi:Clean;Skia4Delphi_VCL:Clean;SK4D_Demo:Clean;VCL101:Clean;Report101:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Skia4Delphi:Make;Skia4Delphi_VCL:Make;SK4D_Demo:Make;VCL101:Make;Report101:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
