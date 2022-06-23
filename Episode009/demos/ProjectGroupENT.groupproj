@@ -1,0 +1,144 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D4C9B150-9309-4EB9-B390-28E8B93877B1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FDLocalSQL\IB+REST+JSON\ib_rest_json.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FDLocalSQL\MDB+XML\mdb_xml.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CDATADemos\AWSDynamoDB\AWSDynamoDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CDATADemos\ExcelFile\ExcelFile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CDATADemos\GoogleCalendar\GoogleCalendar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CDATADemos\SalesForce101\SF101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CDATADemos\WebSearchBing\WebSearchBing.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CDATADemos\WebSearchGoogle\WebSearchGoogle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="EMS101\EMS101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="EMSPooling\EMSPooling.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ib_rest_json">
+        <MSBuild Projects="FDLocalSQL\IB+REST+JSON\ib_rest_json.dproj"/>
+    </Target>
+    <Target Name="ib_rest_json:Clean">
+        <MSBuild Projects="FDLocalSQL\IB+REST+JSON\ib_rest_json.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ib_rest_json:Make">
+        <MSBuild Projects="FDLocalSQL\IB+REST+JSON\ib_rest_json.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="mdb_xml">
+        <MSBuild Projects="FDLocalSQL\MDB+XML\mdb_xml.dproj"/>
+    </Target>
+    <Target Name="mdb_xml:Clean">
+        <MSBuild Projects="FDLocalSQL\MDB+XML\mdb_xml.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mdb_xml:Make">
+        <MSBuild Projects="FDLocalSQL\MDB+XML\mdb_xml.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AWSDynamoDB">
+        <MSBuild Projects="CDATADemos\AWSDynamoDB\AWSDynamoDB.dproj"/>
+    </Target>
+    <Target Name="AWSDynamoDB:Clean">
+        <MSBuild Projects="CDATADemos\AWSDynamoDB\AWSDynamoDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AWSDynamoDB:Make">
+        <MSBuild Projects="CDATADemos\AWSDynamoDB\AWSDynamoDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExcelFile">
+        <MSBuild Projects="CDATADemos\ExcelFile\ExcelFile.dproj"/>
+    </Target>
+    <Target Name="ExcelFile:Clean">
+        <MSBuild Projects="CDATADemos\ExcelFile\ExcelFile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExcelFile:Make">
+        <MSBuild Projects="CDATADemos\ExcelFile\ExcelFile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GoogleCalendar">
+        <MSBuild Projects="CDATADemos\GoogleCalendar\GoogleCalendar.dproj"/>
+    </Target>
+    <Target Name="GoogleCalendar:Clean">
+        <MSBuild Projects="CDATADemos\GoogleCalendar\GoogleCalendar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GoogleCalendar:Make">
+        <MSBuild Projects="CDATADemos\GoogleCalendar\GoogleCalendar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SF101">
+        <MSBuild Projects="CDATADemos\SalesForce101\SF101.dproj"/>
+    </Target>
+    <Target Name="SF101:Clean">
+        <MSBuild Projects="CDATADemos\SalesForce101\SF101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SF101:Make">
+        <MSBuild Projects="CDATADemos\SalesForce101\SF101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebSearchBing">
+        <MSBuild Projects="CDATADemos\WebSearchBing\WebSearchBing.dproj"/>
+    </Target>
+    <Target Name="WebSearchBing:Clean">
+        <MSBuild Projects="CDATADemos\WebSearchBing\WebSearchBing.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebSearchBing:Make">
+        <MSBuild Projects="CDATADemos\WebSearchBing\WebSearchBing.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebSearchGoogle">
+        <MSBuild Projects="CDATADemos\WebSearchGoogle\WebSearchGoogle.dproj"/>
+    </Target>
+    <Target Name="WebSearchGoogle:Clean">
+        <MSBuild Projects="CDATADemos\WebSearchGoogle\WebSearchGoogle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebSearchGoogle:Make">
+        <MSBuild Projects="CDATADemos\WebSearchGoogle\WebSearchGoogle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EMS101">
+        <MSBuild Projects="EMS101\EMS101.dproj"/>
+    </Target>
+    <Target Name="EMS101:Clean">
+        <MSBuild Projects="EMS101\EMS101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EMS101:Make">
+        <MSBuild Projects="EMS101\EMS101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EMSPooling">
+        <MSBuild Projects="EMSPooling\EMSPooling.dproj"/>
+    </Target>
+    <Target Name="EMSPooling:Clean">
+        <MSBuild Projects="EMSPooling\EMSPooling.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EMSPooling:Make">
+        <MSBuild Projects="EMSPooling\EMSPooling.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ib_rest_json;mdb_xml;AWSDynamoDB;ExcelFile;GoogleCalendar;SF101;WebSearchBing;WebSearchGoogle;EMS101;EMSPooling"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ib_rest_json:Clean;mdb_xml:Clean;AWSDynamoDB:Clean;ExcelFile:Clean;GoogleCalendar:Clean;SF101:Clean;WebSearchBing:Clean;WebSearchGoogle:Clean;EMS101:Clean;EMSPooling:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ib_rest_json:Make;mdb_xml:Make;AWSDynamoDB:Make;ExcelFile:Make;GoogleCalendar:Make;SF101:Make;WebSearchBing:Make;WebSearchGoogle:Make;EMS101:Make;EMSPooling:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

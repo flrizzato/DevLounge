@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/22 21:04:03.000.609,=emsserverapi.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:03.000.797,=FireDACCommon.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:03.000.656,=dbrtl.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:03.000.734,=FireDACCommonDriver.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:03.000.688,=emsserverresource.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:03.000.844,=FireDACIBDriver.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:03.000.828,=FireDAC.dcp</Transaction>
+    <Transaction>2022/06/22 21:04:04.000.000,=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/22 21:04:47.000.736,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EMS101\Unit1.pas=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/22 21:04:47.000.736,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EMS101\Unit1.dfm=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/06/22 21:04:49.000.111,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EMS101\Project1.dproj=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/06/23 08:47:20.000.682,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMS101\Project1.dproj=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMS101\EMS101.dproj</Transaction>
+    <Transaction>2022/06/23 08:47:30.000.493,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMS101\Unit1.pas=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMS101\uCustomerResource.pas</Transaction>
+    <Transaction>2022/06/23 08:47:30.000.493,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMS101\Unit1.dfm=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMS101\uCustomerResource.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
