@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/07/17 16:02:00.000.390,=emsserverapi.dcp</Transaction>
+    <Transaction>2024/07/17 16:03:08.000.843,C:\Users\User\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\DevLounge\ServerMod101\server101.dproj</Transaction>
+    <Transaction>2024/07/17 16:08:32.599,=C:\DevLounge\ServerMod101\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 16:08:43.289,C:\DevLounge\ServerMod101\uGpsResource.pas=C:\DevLounge\ServerMod101\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 16:08:43.289,C:\DevLounge\ServerMod101\uGpsResource.dfm=C:\DevLounge\ServerMod101\Unit1.dfm</Transaction>
+    <Transaction>2024/07/17 16:09:42.302,C:\DevLounge\ServerMod101\uGpsResource.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

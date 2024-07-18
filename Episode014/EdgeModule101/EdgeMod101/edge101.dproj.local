@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/07/17 16:03:46.000.168,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 16:04:29.333,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 16:04:42.187,C:\DevLounge\EdgeMod101\uMainForm.dfm=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/07/17 16:04:42.187,C:\DevLounge\EdgeMod101\uMainForm.pas=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 16:04:47.120,C:\DevLounge\EdgeMod101\edge101.dproj=C:\Users\User\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/07/17 16:09:08.155,=C:\DevLounge\ServerMod101\uGpsResource.pas</Transaction>
+  </Transactions>
+</BorlandProject>

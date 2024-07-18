@@ -1,0 +1,13 @@
+﻿[Button1]
+Coordinates=79,10,59,80
+ExplicitSubNodes=Enabled
+
+[EMSEdgeService1]
+Coordinates=156,1,122,36
+
+[EMSProvider1]
+Coordinates=57,78,97,36
+
+[]
+Coordinates=10,10,59,58
+
