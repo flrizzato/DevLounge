@@ -1,0 +1,8 @@
+https://startbootstrap.com/templates/ecommerce
+https://bootstrapformbuilder.com/?
+https://htmx.org/attributes/hx-put/
+https://coderonfleek.medium.com/sending-data-in-htmx-requests-3-ways-4287ead56dbd
+https://www.submitjson.com/blog/htmx-post-json
+https://dummyimage.com/
+https://github.com/rajasegar/awesome-htmx
+https://github.com/NomadicDaddy/htmx-debugger
