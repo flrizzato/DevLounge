@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/06/24 21:31:45.000.919,=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/24 21:32:02.000.700,C:\DemoRAD\FireDAC\GoogleBigQuery101\uMainForm.pas=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/24 21:32:02.000.700,C:\DemoRAD\FireDAC\GoogleBigQuery101\uMainForm.dfm=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/06/24 21:32:09.000.138,C:\DemoRAD\FireDAC\GoogleBigQuery101\GoogleBigQuery.dproj=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
