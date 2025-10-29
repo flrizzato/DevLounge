@@ -1,0 +1,20 @@
+@LayoutPage BaseTemplate
+
+   <h1>Companies</h1>
+
+   <div class="list-group w-50">
+@foreach dataset {
+
+  <a href="/company?id=@loop.custno" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">@loop.company</h5>
+      <small>@loop.country</small>
+    </div>
+    <p class="mb-1">@loop.city</p>
+    <small>@loop.state</small>
+  </a>
+
+}
+
+   </div>
+

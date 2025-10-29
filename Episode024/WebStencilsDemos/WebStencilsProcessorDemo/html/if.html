@@ -1,0 +1,21 @@
+@LayoutPage BaseTemplate
+
+   <h2>If Test</h2>
+
+   <h4>Obj1</h4>
+
+@if obj1.ValueBelowTen {
+  <p>Below ten? @obj1.name <span> has a value of </span> @obj1.value</p>
+}  @else {
+  Above ten? @obj1.name <span> has a value of </span> @obj1.value</p>
+}
+
+
+   <h4>Obj2</h4>
+
+@if obj2.ValueBelowTen {
+  <p>@obj2.name <span> has a value of </span> @obj2.value, which is below 10</p>
+}  
+   
+<p>That's all</p>
+

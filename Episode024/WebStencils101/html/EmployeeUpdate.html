@@ -1,0 +1,48 @@
+@LayoutPage BaseTemplate
+
+   <h1>Employee Update</h1>
+
+    <form hx-put="/employeeapply?id=@emp.EMP_NO" 
+		  hx-boost="true">
+      <div class="form-group row">
+        <label for="EMP_NO" class="col-4 col-form-label">ID</label> 
+        <div class="col-8">
+          <input id="EMP_NO" name="EMP_NO" value="@emp.EMP_NO" type="text" required="required" class="form-control" readonly>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="FIRST_NAME" class="col-4 col-form-label">First Name</label> 
+        <div class="col-8">
+          <input id="FIRST_NAME" name="FIRST_NAME" value="@emp.FIRST_NAME" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="LAST_NAME" class="col-4 col-form-label">Last Name</label> 
+        <div class="col-8">
+          <input id="LAST_NAME" name="LAST_NAME" value="@emp.LAST_NAME" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="PHONE_EXT" class="col-4 col-form-label">Phone Ext</label> 
+        <div class="col-8">
+          <input id="PHONE_EXT" name="PHONE_EXT" value="@emp.PHONE_EXT" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="HIRE_date" class="col-4 col-form-label">Hire Date</label> 
+        <div class="col-8">
+          <input id="HIRE_date" name="HIRE_date" value="@emp.HIRE_date" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="SALARY" class="col-4 col-form-label">Salary</label> 
+        <div class="col-8">
+          <input id="SALARY" name="SALARY" value="@emp.SALARY" type="text" class="form-control" required="required">
+        </div>
+      </div> 
+      <div class="form-group row">
+        <div class="offset-4 col-8">
+          <button name="submit" type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </form>

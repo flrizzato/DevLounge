@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Sample Web Stencils Project</title>
+
+    <meta name="theme-color" content="#7952b3">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @@media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link href="https://getbootstrap.com/docs/5.0/examples/navbar-static/navbar-top.css" rel="stylesheet">
+  </head>
+  <body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Sample Web Stencils Project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/?one=hello">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List">Companies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Company?id=1384">Company</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Test1?one=myparam">Test1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Test2?one=myparam&two=somevalue">Test2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Test3?first=1">Test3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="If">If</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="valuefromobject">Value From Object</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="valuefromevent">Value From Event</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="bg-light p-5 rounded">
+  
+    @RenderBody
+  </div>
+</main>
+    
+  
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  </body>
+</html>
+
