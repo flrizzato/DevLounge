@@ -1,0 +1,19 @@
+Comandos Ollama Local:
+
+versão instalada:               ollama --versions
+
+Listar Modelos disponíveis:     ollama list
+
+Usar um modelo já existente:    ollama create -f Modelfile
+Baixar modelo oficial Ollama:   ollama pull llama3
+
+Rodar modelo baixado:           ollama run llama3
+
+Checar modelos carregados:      ollama os
+
+Parar modelo:                   ollama stop llama3
+
+Acompanhar servidor local :     ollama serve
+
+Atualizar modelo com novas
+funcionalidads:			ollama create -f celia.modelfile
