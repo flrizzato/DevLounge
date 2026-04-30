@@ -1,0 +1,618 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'FMX SSE Client'
+  ClientHeight = 792
+  ClientWidth = 812
+  Fill.Color = xFFF1F5F9
+  Fill.Kind = Solid
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object grpConnection: TGroupBox
+    Align = Top
+    StyledSettings = [Family, FontColor, Other]
+    Margins.Left = 15.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 782.000000000000000000
+    Size.Height = 139.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Connection Params'
+    TextSettings.Font.Size = 16.000000000000000000
+    TabOrder = 0
+    object lblBaseUrl: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 16.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 63.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF64748B
+      Text = 'Base URL'
+      TabOrder = 8
+    end
+    object edtBaseUrl: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 1
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 335.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'http://localhost:8080'
+    end
+    object lblHbMs: TLabel
+      Anchors = [akTop, akRight]
+      StyledSettings = [Family, Size, Style]
+      Position.X = 365.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF64748B
+      Text = 'Heartbeat ms'
+      TabOrder = 9
+    end
+    object edtHbMs: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akTop, akRight]
+      TabOrder = 2
+      Position.X = 365.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = '1000'
+    end
+    object lblDashMs: TLabel
+      Anchors = [akTop, akRight]
+      StyledSettings = [Family, Size, Style]
+      Position.X = 477.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF64748B
+      Text = 'Dashboard ms'
+      TabOrder = 10
+    end
+    object edtDashMs: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akTop, akRight]
+      TabOrder = 3
+      Position.X = 477.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = '3000'
+    end
+    object btnConnect: TButton
+      Anchors = [akTop, akRight]
+      Position.X = 589.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Connect'
+      OnClick = btnConnectClick
+    end
+    object btnReconnect: TButton
+      Anchors = [akTop, akRight]
+      Position.X = 677.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 92.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Reconnect'
+      OnClick = btnReconnectClick
+    end
+    object btnDisconnect: TButton
+      Anchors = [akTop, akRight]
+      Position.X = 589.000000000000000000
+      Position.Y = 88.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Disconnect'
+      OnClick = btnDisconnectClick
+    end
+    object lblStatusCaption: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 16.000000000000000000
+      Position.Y = 101.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF64748B
+      Text = 'Status:'
+      TabOrder = 11
+    end
+    object lblStatus: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 72.000000000000000000
+      Position.Y = 101.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'disconnected'
+      TabOrder = 12
+    end
+  end
+  object lblTitle: TLabel
+    Align = Top
+    StyledSettings = [Family, Style]
+    Margins.Left = 15.000000000000000000
+    Margins.Top = 15.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 15.000000000000000000
+    Size.Width = 782.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 32.000000000000000000
+    TextSettings.FontColor = xFF2563EB
+    Text = 'Delphi 13.1 SSE Demo'
+    TabOrder = 2
+  end
+  object grpDashboard: TGroupBox
+    Align = Top
+    StyledSettings = [Family, Style, FontColor, Other]
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 30.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Margins.Left = 15.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 226.000000000000000000
+    Size.Width = 782.000000000000000000
+    Size.Height = 144.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Live Dashboard'
+    TextSettings.Font.Size = 16.000000000000000000
+    TabOrder = 6
+    object gridDashboard: TGridPanelLayout
+      Align = Client
+      Size.Width = 752.000000000000000000
+      Size.Height = 99.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      ColumnCollection = <
+        item
+          Value = 33.305184720415970000
+        end
+        item
+          Value = 33.330000000000000000
+        end
+        item
+          Value = 33.364812127531280000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = rectKpiUsers
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = rectKpiSales
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = rectKpiAvg
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      object rectKpiUsers: TRectangle
+        Align = Client
+        Fill.Color = xFFF8FAFC
+        Padding.Top = 10.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Size.Width = 235.454986572265600000
+        Size.Height = 99.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFE2E8F0
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object lblKpiUsersBig: TLabel
+          Align = Center
+          StyledSettings = [Family]
+          Size.Width = 256.000000000000000000
+          Size.Height = 52.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF2563EB
+          TextSettings.HorzAlign = Center
+          Text = '-'
+          TabOrder = 1
+        end
+        object lblKpiUsersCap: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, Style]
+          Margins.Top = 5.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 235.454986572265600000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF64748B
+          TextSettings.HorzAlign = Center
+          Text = 'Active Users'
+          TabOrder = 0
+        end
+      end
+      object rectKpiSales: TRectangle
+        Align = Client
+        Fill.Color = xFFF8FAFC
+        Padding.Top = 10.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Size.Width = 235.641601562500000000
+        Size.Height = 99.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFE2E8F0
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object lblKpiSalesCap: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, Style]
+          Margins.Top = 5.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 235.641601562500000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF64748B
+          TextSettings.HorzAlign = Center
+          Text = 'Sales Total'
+          TabOrder = 0
+        end
+        object lblKpiSalesBig: TLabel
+          Align = Center
+          StyledSettings = [Family]
+          Size.Width = 256.000000000000000000
+          Size.Height = 52.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF2563EB
+          TextSettings.HorzAlign = Center
+          Text = '-'
+          TabOrder = 1
+        end
+      end
+      object rectKpiAvg: TRectangle
+        Align = Client
+        Fill.Color = xFFF8FAFC
+        Padding.Top = 10.000000000000000000
+        Size.Width = 250.903411865234400000
+        Size.Height = 99.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFE2E8F0
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object lblKpiAvgCap: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, Style]
+          Margins.Top = 5.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 250.903411865234400000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF64748B
+          TextSettings.HorzAlign = Center
+          Text = 'Avg Order'
+          TabOrder = 0
+        end
+        object lblKpiAvgBig: TLabel
+          Align = Center
+          StyledSettings = [Family]
+          Size.Width = 256.000000000000000000
+          Size.Height = 55.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF2563EB
+          TextSettings.HorzAlign = Center
+          Text = '-'
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object grpJob: TGroupBox
+    Align = Top
+    StyledSettings = [Family, Style, FontColor, Other]
+    Margins.Left = 15.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 385.000000000000000000
+    Size.Width = 782.000000000000000000
+    Size.Height = 78.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Background Job'
+    TextSettings.Font.Size = 16.000000000000000000
+    TabOrder = 5
+    object btnStartJob: TButton
+      Position.X = 17.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      Text = 'Start Job'
+      OnClick = btnStartJobClick
+    end
+    object ProgressBar1: TProgressBar
+      Anchors = [akLeft, akTop, akRight]
+      Orientation = Horizontal
+      Position.X = 125.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 517.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object lblJobStage: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 650.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 118.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Idle'
+      TabOrder = 14
+    end
+  end
+  object grpEvents: TGroupBox
+    Align = Top
+    StyledSettings = [Family, Style, FontColor, Other]
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 25.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Margins.Left = 15.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 478.000000000000000000
+    Size.Width = 782.000000000000000000
+    Size.Height = 145.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Events Count'
+    TextSettings.Font.Size = 16.000000000000000000
+    TabOrder = 3
+    object lblLastHeartbeatCaption: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.Y = 85.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF64748B
+      TextSettings.HorzAlign = Trailing
+      Text = 'Last heartbeat:'
+      TabOrder = 3
+    end
+    object lblLastHeartbeat: TLabel
+      StyledSettings = [Size, Style, FontColor]
+      Position.X = 137.000000000000000000
+      Position.Y = 85.000000000000000000
+      Size.Width = 718.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Consolas'
+      Text = '-'
+      TabOrder = 4
+    end
+    object lblLastDashCaption: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.Y = 112.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF64748B
+      TextSettings.HorzAlign = Trailing
+      Text = 'Last dashboard (raw):'
+      TabOrder = 5
+    end
+    object lblLastDash: TLabel
+      StyledSettings = [Size, Style, FontColor]
+      Position.X = 137.000000000000000000
+      Position.Y = 112.000000000000000000
+      Size.Width = 718.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Consolas'
+      Text = '-'
+      TabOrder = 6
+    end
+    object gridEvents: TGridPanelLayout
+      Align = Top
+      Position.X = 15.000000000000000000
+      Position.Y = 25.000000000000000000
+      Size.Width = 752.000000000000000000
+      Size.Height = 52.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      ColumnCollection = <
+        item
+          Value = 33.305184720415970000
+        end
+        item
+          Value = 33.330000000000000000
+        end
+        item
+          Value = 33.364812127531280000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = lytEventsTotal
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = lytEventsHeartbeat
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = lytEventsDashboard
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      object lytEventsTotal: TLayout
+        Anchors = []
+        Position.X = 25.727493286132810000
+        Position.Y = 1.000000000000000000
+        Size.Width = 199.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblTotal: TLabel
+          Align = Client
+          AutoSize = True
+          StyledSettings = [Size, FontColor]
+          Size.Width = 103.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Consolas'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 3
+        end
+        object lblTotalCaption: TLabel
+          Align = Left
+          AutoSize = True
+          StyledSettings = [Family, Size, Style]
+          Margins.Right = 10.000000000000000000
+          Size.Width = 86.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF64748B
+          TextSettings.HorzAlign = Trailing
+          Text = 'Total events:'
+          TabOrder = 2
+        end
+      end
+      object lytEventsHeartbeat: TLayout
+        Anchors = []
+        Position.X = 276.275787353515600000
+        Position.Y = 1.000000000000000000
+        Size.Width = 199.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblHeartbeatCaption: TLabel
+          Align = Left
+          AutoSize = True
+          StyledSettings = [Family, Size, Style]
+          Margins.Right = 10.000000000000000000
+          Size.Width = 115.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF64748B
+          TextSettings.HorzAlign = Trailing
+          Text = 'Heartbeat events:'
+          TabOrder = 4
+        end
+        object lblHeartbeat: TLabel
+          Align = Client
+          AutoSize = True
+          StyledSettings = [Size, FontColor]
+          Size.Width = 74.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Consolas'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 3
+        end
+      end
+      object lytEventsDashboard: TLayout
+        Anchors = []
+        Position.X = 527.048278808593800000
+        Position.Y = 1.000000000000000000
+        Size.Width = 199.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblDashCaption: TLabel
+          Align = Left
+          AutoSize = True
+          StyledSettings = [Family, Size, Style]
+          Margins.Right = 10.000000000000000000
+          Size.Width = 108.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF64748B
+          TextSettings.HorzAlign = Trailing
+          Text = 'Dashboard events:'
+          TabOrder = 4
+        end
+        object lblDash: TLabel
+          Align = Client
+          AutoSize = True
+          StyledSettings = [Size, FontColor]
+          Size.Width = 81.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Consolas'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  object grpLogs: TGroupBox
+    Align = Client
+    StyledSettings = [Family, Style, FontColor, Other]
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 30.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Margins.Left = 15.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Size.Width = 782.000000000000000000
+    Size.Height = 139.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Realtime Logs'
+    TextSettings.Font.Size = 16.000000000000000000
+    TabOrder = 4
+    object memLog: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      StyledSettings = [Size, Style]
+      TextSettings.Font.Family = 'Consolas'
+      TextSettings.FontColor = claGray
+      Align = Client
+      Size.Width = 752.000000000000000000
+      Size.Height = 94.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 748.000000000000000000
+      Viewport.Height = 90.000000000000000000
+    end
+  end
+end

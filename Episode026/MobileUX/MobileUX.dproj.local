@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/07/21 14:28:07.000.787,=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/21 14:28:46.000.438,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\POCs\MobileUX\uMainForm.fmx</Transaction>
+    <Transaction>2017/07/21 14:28:46.000.438,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\POCs\MobileUX\uMainForm.pas</Transaction>
+    <Transaction>2017/07/21 14:28:49.000.717,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\POCs\MobileUX\MobileUX.dproj</Transaction>
+    <Transaction>2017/07/21 14:29:00.000.825,=C:\POCs\MobileUX\Unit2.pas</Transaction>
+    <Transaction>2017/07/21 14:29:07.000.229,C:\POCs\MobileUX\Unit2.fmx=C:\POCs\MobileUX\uFormOne.fmx</Transaction>
+    <Transaction>2017/07/21 14:29:07.000.229,C:\POCs\MobileUX\Unit2.pas=C:\POCs\MobileUX\uFormOne.pas</Transaction>
+    <Transaction>2017/07/21 14:29:12.000.987,=C:\POCs\MobileUX\Unit3.pas</Transaction>
+    <Transaction>2017/07/21 14:29:18.000.120,C:\POCs\MobileUX\Unit3.fmx=C:\POCs\MobileUX\uFormTwo.fmx</Transaction>
+    <Transaction>2017/07/21 14:29:18.000.120,C:\POCs\MobileUX\Unit3.pas=C:\POCs\MobileUX\uFormTwo.pas</Transaction>
+    <Transaction>2017/07/21 14:29:25.000.197,=C:\POCs\MobileUX\Unit4.pas</Transaction>
+    <Transaction>2017/07/21 14:29:47.000.012,C:\POCs\MobileUX\Unit4.pas=C:\POCs\MobileUX\uFormThree.pas</Transaction>
+    <Transaction>2017/07/21 14:29:47.000.012,C:\POCs\MobileUX\Unit4.fmx=C:\POCs\MobileUX\uFormThree.fmx</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<PmacOS iOSSimulator="iPhone5" iOSDevice64=""/>
+		<NoProfile Android="" iOSSimulator="iPhone5" Android64=""/>
+		<PMACOS iOSSimulator="iPhone5"/>
+		<PmacOSM2 iOSSimARM64="_iossimulator_9CFAAB76-CBC1-438E-AF9D-8AD0100EABF2"/>
+	</ActiveMobileDevice>
+</BorlandProject>

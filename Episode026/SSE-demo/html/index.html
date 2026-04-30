@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSE Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@picocss/pico@@2/css/pico.min.css" />
+  <style>
+    #log { height: 220px; overflow: auto; white-space: pre-wrap; font-size: 0.85em; background: var(--pico-code-background-color); padding: 0.75rem; border-radius: var(--pico-border-radius); }
+    .kpi { text-align: center; }
+    .kpi strong { font-size: 1.6rem; display: block; }
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: var(--pico-grid-column-gap, 1rem);
+      row-gap: 0.35rem;
+      align-items: end;
+    }
+    .controls-grid > :is(label) { margin-bottom: 0; }
+    /* Pico has no status variants on <mark>; reuse ins/del palette from the same theme */
+    #status { padding: 0.12em 0.4em; border-radius: var(--pico-border-radius); }
+    #status[data-state="connecting"] { background-color: var(--pico-mark-background-color); color: var(--pico-mark-color); }
+    #status[data-state="connected"] { background-color: color-mix(in srgb, var(--pico-ins-color) 22%, var(--pico-background-color)); color: var(--pico-ins-color); }
+    #status[data-state="reconnecting"] { background-color: color-mix(in srgb, var(--pico-del-color) 22%, var(--pico-background-color)); color: var(--pico-del-color); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Delphi 13.1 SSE Demo</h1>
+
+    <article>
+      <div class="controls-grid">
+        <label for="hbMs">Heartbeat ms</label>
+        <label for="dashMs">Dashboard ms</label>
+        <span class="spacer" aria-hidden="true">.</span>
+
+        <input id="hbMs" type="number" min="250" max="60000" step="250" value="1000" />
+        <input id="dashMs" type="number" min="250" max="60000" step="250" value="3000" />
+        <button id="applyBtn" type="button" style="width:100%">Apply</button>
+      </div>
+      <div><small>Status: <mark id="status" data-state="connecting">connecting...</mark> &mdash; Stream: <code id="currentStream">/events?hbMs=1000&dashMs=3000</code></small></div>
+      <div class="secondary"><small>Dashboard KPIs are <strong>shared for all clients</strong>; they advance every 3s on the server. &ldquo;Dashboard ms&rdquo; only controls how often this browser receives snapshots.</small></div>
+    </article>
+
+    <article>
+      <header>Live Dashboard</header>
+      <div class="grid">
+        <div class="kpi"><small>Active Users</small><strong id="kpiUsers">-</strong></div>
+        <div class="kpi"><small>Sales Total</small><strong id="kpiSales">-</strong></div>
+        <div class="kpi"><small>Avg Order</small><strong id="kpiAvg">-</strong></div>
+      </div>
+    </article>
+
+    <article>
+      <header>Background Job</header>
+      <div class="grid">
+        <div>
+          <button id="startJobBtn" type="button">Start Job</button>
+        </div>
+        <div style="flex:2">
+          <progress id="jobProgress" value="0" max="100"></progress>
+          <small id="jobStage">Idle</small>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <header>Event Counters</header>
+      <div class="grid">
+        <div>Total: <strong id="countTotal">0</strong></div>
+        <div>Heartbeat: <strong id="countHeartbeat">0</strong></div>
+        <div>Dashboard: <strong id="countDash">0</strong></div>
+        <div>Progress: <strong id="countProgress">0</strong></div>
+      </div>
+      <div><small>Last heartbeat: <span id="lastHeartbeat">-</span></small></div>
+      <div><small>Last dashboard: <span id="lastDash">-</span></small></div>
+    </article>
+
+    <article>
+      <header>Raw Event Log</header>
+      <div id="log"></div>
+    </article>
+
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let totalCount = 0, heartbeatCount = 0, dashCount = 0, progressCount = 0;
+    let es = null;
+
+    const normalizeMs = (v, fb) => {
+      const n = parseInt(v, 10);
+      return isNaN(n) ? fb : Math.max(250, Math.min(60000, n));
+    };
+
+    const streamUrl = () => {
+      const hb = normalizeMs($("hbMs").value, 1000);
+      const d = normalizeMs($("dashMs").value, 3000);
+      $("hbMs").value = hb;
+      $("dashMs").value = d;
+      return `/events?hbMs=${hb}&dashMs=${d}`;
+    };
+
+    const log = (m) => {
+      const el = $("log");
+      el.textContent += m + "\n";
+      el.scrollTop = el.scrollHeight;
+    };
+
+    const setStatus = (text, state) => {
+      const el = $("status");
+      el.textContent = text;
+      el.dataset.state = state;
+    };
+
+    const inc = (kind) => {
+      totalCount++;
+      $("countTotal").textContent = totalCount;
+      if (kind === "heartbeat") { heartbeatCount++; $("countHeartbeat").textContent = heartbeatCount; }
+      if (kind === "dashboard") { dashCount++; $("countDash").textContent = dashCount; }
+      if (kind === "progress") { progressCount++; $("countProgress").textContent = progressCount; }
+    };
+
+    const openStream = () => {
+      const url = streamUrl();
+      if (es) es.close();
+      $("currentStream").textContent = url;
+      setStatus("connecting...", "connecting");
+      es = new EventSource(url);
+
+      es.onopen = () => {
+        setStatus("connected", "connected");
+        log(`[open] ${url}`);
+      };
+
+      es.onerror = () => {
+        setStatus("reconnecting...", "reconnecting");
+        log("[error] dropped, waiting reconnect");
+      };
+
+      es.onmessage = (e) => {
+        log(`[message] id=${e.lastEventId} data=${e.data}`);
+      };
+
+      es.addEventListener("heartbeat", (e) => {
+        inc("heartbeat");
+        try { $("lastHeartbeat").textContent = JSON.parse(e.data).utc || e.data; } catch(_) { $("lastHeartbeat").textContent = e.data; }
+        log(`[heartbeat] id=${e.lastEventId} data=${e.data}`);
+      });
+
+      es.addEventListener("dashboard", (e) => {
+        inc("dashboard");
+        try {
+          const d = JSON.parse(e.data);
+          $("kpiUsers").textContent = d.activeUsers;
+          $("kpiSales").textContent = "$" + Number(d.salesTotal).toLocaleString("en-US", {minimumFractionDigits:2});
+          $("kpiAvg").textContent = "$" + Number(d.avgOrder).toFixed(2);
+          $("lastDash").textContent = e.data;
+        } catch(_) { $("lastDash").textContent = e.data; }
+        log(`[dashboard] id=${e.lastEventId} data=${e.data}`);
+      });
+
+      es.addEventListener("progress", (e) => {
+        inc("progress");
+        try {
+          const p = JSON.parse(e.data);
+          $("jobProgress").value = p.percent;
+          $("jobStage").textContent = p.stage || "";
+        } catch(_) {}
+        log(`[progress] id=${e.lastEventId} data=${e.data}`);
+      });
+    };
+
+    $("applyBtn").addEventListener("click", openStream);
+    $("startJobBtn").addEventListener("click", () => {
+      fetch("/startjob", {method:"POST"}).then(r => r.json()).then(d => log("[job] " + JSON.stringify(d)));
+    });
+
+    openStream();
+  </script>
+</body>
+</html>
