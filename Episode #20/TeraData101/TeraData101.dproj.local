@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/05/27 09:42:44.000.547,=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/05/27 09:45:52.000.539,C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\TeraData101\uMainForm.dfm=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/05/27 09:45:52.000.539,C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\TeraData101\uMainForm.pas=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/05/27 09:45:56.000.577,C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\TeraData101\TeraData101.dproj=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/05/27 14:21:28.000.394,=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\TeraData101\lib\FireDAC.Phys.TData.pas</Transaction>
+    <Transaction>2025/05/27 14:32:44.000.906,C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\TeraData101\lib\FireDAC.Phys.TData.pas=</Transaction>
+    <Transaction>2025/05/27 14:33:23.000.874,=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\TeraData101\lib\FireDAC.Phys.TData.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,44 @@
+@LayoutPage BaseTemplate
+
+   <h1>Employees</h1>
+	
+	 <table id="example-table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Phone Ext</th>
+            <th>Hire Date</th>
+            <th>Job Country</th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var emp in dataset)  {
+
+   <tr>
+       <td>@emp.full_name</td>
+       <td>@emp.phone_ext</td>
+       <td>@emp.hire_date</td>
+       <td>@emp.job_country</td>
+   </tr>
+
+}
+
+    </tbody>
+   </table>
+
+   <script>var table = new Tabulator("#example-table", {
+   	layout:"fitColumns",
+    pagination:"local",
+    paginationSize:6,
+    paginationSizeSelector:[3, 6, 8, 10],
+    movableColumns:true,
+    paginationCounter:"rows",
+    groupBy:"job_country",
+        columns:[
+        {title:"Full Name", field:"full_name", width:200},
+        {title:"Phone Ext", field:"phone_ext", sorter:"number"},
+        {title:"Hire Date", field:"hire_date"},
+        {title:"Job Country", field:"job_country"}
+    ]
+    });</script>

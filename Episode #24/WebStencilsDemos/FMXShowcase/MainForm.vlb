@@ -1,0 +1,13 @@
+﻿[ActGenerateWSResult]
+Coordinates=330,78,144,36
+
+[]
+Coordinates=107,10,79,58
+Visible=True
+
+[ActionList]
+Coordinates=101,174,78,36
+
+[WebStencilsProcessor]
+Coordinates=330,133,151,36
+

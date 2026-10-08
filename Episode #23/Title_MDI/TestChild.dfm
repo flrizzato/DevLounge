@@ -1,0 +1,31 @@
+object frmTestChild: TfrmTestChild
+  Left = 0
+  Top = 0
+  Caption = 'Test Child'
+  ClientHeight = 481
+  ClientWidth = 851
+  Color = clBtnFace
+  CustomTitleBar.SystemColors = False
+  CustomTitleBar.SystemButtons = False
+  CustomTitleBar.BackgroundColor = 13669120
+  CustomTitleBar.ForegroundColor = 65793
+  CustomTitleBar.InactiveBackgroundColor = clWhite
+  CustomTitleBar.InactiveForegroundColor = 10066329
+  CustomTitleBar.ButtonForegroundColor = 65793
+  CustomTitleBar.ButtonBackgroundColor = 13669120
+  CustomTitleBar.ButtonHoverForegroundColor = 65793
+  CustomTitleBar.ButtonHoverBackgroundColor = 16053492
+  CustomTitleBar.ButtonPressedForegroundColor = 65793
+  CustomTitleBar.ButtonPressedBackgroundColor = 15395562
+  CustomTitleBar.ButtonInactiveForegroundColor = 10066329
+  CustomTitleBar.ButtonInactiveBackgroundColor = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  Visible = True
+  OnClose = FormClose
+  TextHeight = 15
+end

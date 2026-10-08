@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/09/27 18:44:24.000.442,=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/09/30 08:18:28.000.093,=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/09/30 08:29:37.000.546,C:\ECon2023\Demos\Multiline String\uMainForm.pas=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/09/30 08:29:37.000.546,C:\ECon2023\Demos\Multiline String\uMainForm.dfm=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/09/30 08:29:51.000.825,C:\ECon2023\Demos\Multiline String\MultilineStrings.dproj=C:\Users\Fernando\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android64="RQCW507ZHSA" Android="RQCW507ZHSA"/>
+	</ActiveMobileDevice>
+</BorlandProject>

@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{58097CA2-9392-4FA6-A9DA-AA0FC7A8DFBC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SendNotification.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ListQueues.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ListBuckets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="sendEmail.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SendNotification">
+        <MSBuild Projects="SendNotification.dproj"/>
+    </Target>
+    <Target Name="SendNotification:Clean">
+        <MSBuild Projects="SendNotification.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SendNotification:Make">
+        <MSBuild Projects="SendNotification.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ListQueues">
+        <MSBuild Projects="ListQueues.dproj"/>
+    </Target>
+    <Target Name="ListQueues:Clean">
+        <MSBuild Projects="ListQueues.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ListQueues:Make">
+        <MSBuild Projects="ListQueues.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ListBuckets">
+        <MSBuild Projects="ListBuckets.dproj"/>
+    </Target>
+    <Target Name="ListBuckets:Clean">
+        <MSBuild Projects="ListBuckets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ListBuckets:Make">
+        <MSBuild Projects="ListBuckets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="sendEmail">
+        <MSBuild Projects="sendEmail.dproj"/>
+    </Target>
+    <Target Name="sendEmail:Clean">
+        <MSBuild Projects="sendEmail.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sendEmail:Make">
+        <MSBuild Projects="sendEmail.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SendNotification;ListQueues;ListBuckets;sendEmail"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SendNotification:Clean;ListQueues:Clean;ListBuckets:Clean;sendEmail:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SendNotification:Make;ListQueues:Make;ListBuckets:Make;sendEmail:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

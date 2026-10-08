@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E56B8B57-D203-4ACA-95C0-B707588F4A04}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CloudExplorer\CloudExplorer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AzureCognitiveServices\Sample\AzureCognitiveServicesExample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CloudExplorer">
+        <MSBuild Projects="CloudExplorer\CloudExplorer.dproj"/>
+    </Target>
+    <Target Name="CloudExplorer:Clean">
+        <MSBuild Projects="CloudExplorer\CloudExplorer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CloudExplorer:Make">
+        <MSBuild Projects="CloudExplorer\CloudExplorer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AzureCognitiveServicesExample">
+        <MSBuild Projects="AzureCognitiveServices\Sample\AzureCognitiveServicesExample.dproj"/>
+    </Target>
+    <Target Name="AzureCognitiveServicesExample:Clean">
+        <MSBuild Projects="AzureCognitiveServices\Sample\AzureCognitiveServicesExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AzureCognitiveServicesExample:Make">
+        <MSBuild Projects="AzureCognitiveServices\Sample\AzureCognitiveServicesExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CloudExplorer;AzureCognitiveServicesExample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CloudExplorer:Clean;AzureCognitiveServicesExample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CloudExplorer:Make;AzureCognitiveServicesExample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

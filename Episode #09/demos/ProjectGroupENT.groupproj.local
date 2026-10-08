@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/22 15:44:20.000.585,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\ProjectGroupENT.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Users\ferna\Downloads\CDATADemos\AWSDynamoDB\AWSDynamoDB.dproj"/>
+	</Default.Personality>
+</BorlandProject>

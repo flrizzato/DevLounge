@@ -1,0 +1,5 @@
+https://docwiki.embarcadero.com/RADStudio/Athens/en/ThingPoint_Overview
+https://docwiki.embarcadero.com/RADStudio/Athens/en/Implementing_a_Simple_ThingPoint_Application
+https://docwiki.embarcadero.com/RADStudio/Athens/en/Developing_a_ThingPoint_Application_with_RAD_Server#Adding_an_EMS_Resource_to_a_ThingPoint
+https://docwiki.embarcadero.com/RADStudio/Athens/en/RAD_Server_EdgeModules_Resource
+https://lp.embarcadero.com/RADServerGuide

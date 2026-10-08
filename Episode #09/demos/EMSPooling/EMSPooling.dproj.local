@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/07 20:13:17.000.684,=emsserverresource.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:17.000.731,=FireDACCommonDriver.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:17.000.669,=dbrtl.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:17.000.794,=FireDAC.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:17.000.825,=FireDACIBDriver.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:17.000.638,=emsserverapi.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:17.000.747,=FireDACCommon.dcp</Transaction>
+    <Transaction>2022/06/07 20:13:18.000.810,=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/07 20:15:12.000.997,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EMSPooling\Unit1.pas</Transaction>
+    <Transaction>2022/06/07 20:15:12.000.997,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EMSPooling\Unit1.dfm</Transaction>
+    <Transaction>2022/06/07 20:15:20.000.731,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EMSPooling\EMSPooling.dproj</Transaction>
+    <Transaction>2022/06/23 08:47:44.000.041,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMSPooling\Unit1.dfm=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMSPooling\uPoolingResource.dfm</Transaction>
+    <Transaction>2022/06/23 08:47:44.000.041,C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMSPooling\Unit1.pas=C:\Users\ferna\Documents\Embarcadero\Studio\Projects\EnterpriseSKU\EMSPooling\uPoolingResource.pas</Transaction>
+  </Transactions>
+</BorlandProject>

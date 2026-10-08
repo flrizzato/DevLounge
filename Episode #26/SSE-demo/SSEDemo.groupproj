@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{79A338E1-DE08-44AC-A6AF-E5D25897B16F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SSEServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXSSEClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SSEServer">
+        <MSBuild Projects="SSEServer.dproj"/>
+    </Target>
+    <Target Name="SSEServer:Clean">
+        <MSBuild Projects="SSEServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SSEServer:Make">
+        <MSBuild Projects="SSEServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXSSEClient">
+        <MSBuild Projects="FMXSSEClient.dproj"/>
+    </Target>
+    <Target Name="FMXSSEClient:Clean">
+        <MSBuild Projects="FMXSSEClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXSSEClient:Make">
+        <MSBuild Projects="FMXSSEClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SSEServer;FMXSSEClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SSEServer:Clean;FMXSSEClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SSEServer:Make;FMXSSEClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

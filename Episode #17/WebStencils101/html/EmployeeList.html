@@ -1,0 +1,19 @@
+@LayoutPage BaseTemplate
+
+   <h1>Employees</h1>
+
+   <div class="list-group w-50">
+@foreach (var emp in dataset)  {
+
+  <a href="/employeeupdate?id=@emp.emp_no" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">@emp.full_name</h5>
+      <small>@emp.phone_ext</small>
+    </div>
+    <p class="mb-1">@emp.hire_date</p>
+    <small>@emp.job_country</small>
+  </a>
+
+}
+
+   </div>

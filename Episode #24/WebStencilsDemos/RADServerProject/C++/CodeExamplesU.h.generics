@@ -1,0 +1,39 @@
+// CodeExamplesU.h
+#ifndef CodeExamplesUH
+#define CodeExamplesUH
+
+#include <System.hpp>
+#include <System.Classes.hpp>
+#include <map>
+#include <memory>
+#include "System.Generics.collections.hpp"
+#include "Web.Stencils.hpp"
+
+
+class TCodeExample : public TObject {
+private:
+    String FId;
+    String FCode;
+
+public:
+    TCodeExample(const String& AId, const String& ACode);
+    __property String Id = {read=FId};
+    __property String Code = {read=FCode, write=FCode};
+};
+
+class TCodeExamples : public TObject {
+private:
+	TDictionary__2<String, TCodeExample>* FItems;
+//	std::map<String, std::unique_ptr<TCodeExample>> FItems;
+    TWebStencilsEngine* FWebStencilsEngine;
+    void InitValues();
+
+public:
+    TCodeExamples(TWebStencilsEngine* AWebStencilsEngine);
+    virtual ~TCodeExamples() = default;
+
+    void Add(const String& AId, const String& ACode);
+    TCodeExample* Find(const String& AId);
+};
+
+#endif

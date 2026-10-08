@@ -1,0 +1,34 @@
+@LayoutPage BaseTemplate
+
+   <h2>Page Test 2</h2>
+
+   <h3>"page" params</h3>
+
+   <div class="list-group w-50">
+@foreach page {
+
+   <div class="d-flex w-100 justify-content-between">
+     <small>@loop.name</small>
+     <small>@loop.value</small>
+   </div>
+
+}
+
+   </div>
+
+   <h3>"query" params</h3>
+
+   <div class="list-group w-50">
+@foreach query {
+
+   <div class="d-flex w-100 justify-content-between">
+     <small>@loop.name</small>
+     <small>@loop.value</small>
+   </div>
+
+}
+
+   </div>
+
+
+

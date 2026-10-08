@@ -1,0 +1,156 @@
+#include <vcl.h>
+#pragma hdrstop
+
+#include "CodeExamplesU.h"
+#pragma package(smart_init)
+
+TCodeExample::TCodeExample(const String& AId, const String& ACode) {
+    FId = AId;
+    FCode = ACode;
+}
+
+TCodeExamples::TCodeExamples(TWebStencilsEngine* AWebStencilsEngine) {
+	// Create dictionary with ownership of objects
+	FItems = new TDictionary__2<String, TCodeExample*>(0);
+
+    FWebStencilsEngine = AWebStencilsEngine;
+    InitValues();
+
+    // Use range-based for with proper type
+//    for (TPair<String, TCodeExample*> pair : *FItems) {
+//        String Key = pair.Key;
+//        TCodeExample* CodeExample = pair.Value;
+//        FWebStencilsEngine->AddVar(Key, CodeExample);
+//    }
+}
+
+TCodeExamples::~TCodeExamples() {
+    delete FItems;
+}
+
+void TCodeExamples::Add(const String& AId, const String& ACode) {
+    FItems->Add(AId, new TCodeExample(AId, ACode));
+}
+
+TCodeExample* TCodeExamples::Find(const String& AId) {
+    auto it = FItems.find(AId);
+    return it != FItems.end() ? it->second.get() : nullptr;
+}
+
+void TCodeExamples::InitValues() {
+    Add("codeAtSymbol", "@object.value");
+    Add("codeDotNotation",
+        "\""
+        "<h2>User Profile</h2>\n"
+        "<p>Name: @user.name</p>\n"
+        "<p>Email: @user.email</p>\n"
+        "\"");
+    Add("codeComments",
+        "\""
+        "@* This is a comment and will not appear in the output *@\n"
+        "<p>This will appear in the output</p>\n"
+        "\"");
+    Add("codeIfAndElse",
+        "\""
+        "@if user.isLoggedIn {\n"
+        "    <p>Welcome, @user.name!</p>\n"
+        "}\n"
+        "@else {\n"
+        "    <p>Please log in to continue.</p>\n"
+        "}\n"
+        "\"");
+    Add("codeIfNot",
+        "\""
+        "@if not cart.isEmpty {\n"
+        "  <p>You have @cart.itemCount items in your cart.</p>\n"
+        "}\n"
+        "@else {\n"
+        "  <p>Your cart is empty.</p>\n"
+        "}\n"
+        "\"");
+    Add("codeForeach",
+        "\""
+        "<ul>\n"
+        "@ForEach (var product in productList) {\n"
+        "    <li>@product.name - @product.price</li>\n"
+        "}\n"
+        "</ul>\n"
+        "\"");
+    Add("codeQuery", "<p>You searched for: @query.searchTerm</p>");
+    Add("codePage", "<p>Current page is: @page.pagename</p>");
+    Add("codeDataObject", "WebStencilsProcessor1->AddVar(\"user\", UserObject);");
+    Add("codeDataMethod",
+        "\""
+        "WebStencilsProcessor1->AddVar(\"products\",\n"
+        "  []() -> TObject* {\n"
+        "    return GetProductList();\n"
+        "  });\n"
+        "\"");
+    Add("codeDataAttribute",
+        "\""
+        "class TMyDataModule : public TDataModule {\n"
+        "  [WebStencilsVar(\"customers\", false)]\n"
+        "  TFDMemTable* FDMemTable1;\n"
+        "  [WebStencilsVar(\"users\")]\n"
+        "  TUsers* FUsers;\n"
+        "};\n\n"
+        "WebStencilsProcessor1->AddModule(DataModule1);\n"
+		"\"");
+	Add("codeLayoutPage",
+        "\""
+        "@LayoutPage BaseTemplate\n"
+        "<h1>Welcome to My Page</h1>\n"
+        "<p>This is the content of my page.</p>\n"
+        "\"");
+
+    Add("codeRenderBody",
+        "\""
+        "<!DOCTYPE html>\n"
+        "<html>\n"
+        "<head>\n"
+        "    <title>My Website</title>\n"
+        "</head>\n"
+        "<body>\n"
+        "    <header>\n"
+        "        <!-- Common header content -->\n"
+        "    </header>\n"
+        "    <main>\n"
+        "        @RenderBody\n"
+        "    </main>\n"
+        "    <footer>\n"
+        "        <!-- Common footer content -->\n"
+        "    </footer>\n"
+        "</body>\n"
+        "</html>\n"
+        "\"");
+
+    Add("codeImport",
+        "\""
+        "@Import Sidebar.html\n"
+        "@* Same behaviour as the previous one *@\n"
+        "@Import Sidebar\n"
+        "@* Use nested templates for better organization *@\n"
+        "@Import folder/Sidebar\n"
+        "\"");
+
+    Add("codeHeaderBodyFooter",
+        "\""
+        "@Import Header.html\n"
+        "<main>\n"
+        "    <!-- Page-specific content here -->\n"
+        "</main>\n"
+        "@Import Footer.html\n"
+        "\"");
+
+    Add("codeReusableComponents",
+        "\""
+        "<div class=\"product-list\">\n"
+        "    @Import ProductList { @list = @ProductList }\n"
+        "</div>\n"
+        "<div class=\"tasks\">\n"
+        "  @ForEach (var Task in Tasks.AllTasks) {\n"
+        "        @Import partials/tasks/item { @Task }\n"
+        "    }\n"
+        "</div>\n"
+        "\"");
+}
